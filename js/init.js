@@ -1,12 +1,12 @@
 function ecChartPie(){
-  //$.extend(this , ecChartPieConfig);
+  $.extend(this , ecChartPieConfig);
   var svg, pie, key, slice, arc, outerArc, radius, config, widget;
 
   this.settings = {};
 
   this.init = function(settings){
     var defaultConfig, width, height;
-    //this.addPreloader();
+    this.addPreloader();
     if(typeof settings !== 'undefined'){
       this.settings = settings;
     }
@@ -93,7 +93,7 @@ function ecChartPie(){
 
     key = function(d){ return d.data.label; };
     this.bindEvent();
-    //this.removePreloader();
+    this.removePreloader();
   };
 
   this.change = function(data){
