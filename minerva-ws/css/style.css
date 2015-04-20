@@ -1,0 +1,24 @@
+.minerva {
+  font-family: Verdana;
+}
+
+.minerva-nav {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  font-size: 13px;
+}
+
+.minerva ul li {
+  margin: 5px;
+  display: block;
+}
+
+.minerva a {
+  margin: 5px;
+  display: inline-block;
+}
+
+.minerva a:hover {
+  background: #f1f1f1;
+}

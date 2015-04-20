@@ -1,0 +1,35 @@
+{
+  "name": "mnv-chart-pie",
+  "version": "0.1.0",
+  "homepage": "https://github.com/umbobabo/mnv-chart-pie",
+  "authors": [
+    "Umberto Babini <umbertobabini@economist.com>"
+  ],
+  "description": "Provide basic D3 Pie chart component",
+  "main": [
+    "./dist/css/style.css",
+    "./dist/js/mnv-chart-pie.min.js",
+    ".dist/js/mnv-chart-pie.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "css/",
+    "data/",
+    "js/",
+    "minerva-ws/",
+    "node_modules/",
+    "partials/",
+    "sites/",
+    "tmp/",
+    "views/",
+    ".gitignore",
+    "bower.json",
+    "config.json",
+    "Gruntfile.js",
+    "minerva-ws.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "mnv-shared": "*"
+  }
+}

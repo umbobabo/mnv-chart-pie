@@ -1,0 +1,71 @@
+
+<div data-mnv="ecChartPie" class="mnv-widget mnv-ec-chart mnv-ec-chartpie" id="ec-chartpie-0"><button id="push-0">Push initial Data</button><button id="push-1">Push final Data</button></div>
+<div data-mnv="ecChartPie" class="mnv-widget mnv-ec-chart mnv-ec-chartpie" id="ec-chartpie-1"><button id="push-10">Push initial Data</button><button id="push-11">Push final Data</button></div>
+<script>
+
+$(document).ready(function(){
+ //Example of forced data injection
+ $('#push-0').on('click', function(){
+    $("#ec-chartpie-0").trigger('dataProviding', [[{ label: 'primos', value: 1, color: "#8a89a6"}]]);
+  });
+
+ $('#push-1').on('click', function(){
+    $("#ec-chartpie-0").trigger('dataProviding', [[{ label: 'primo', value: 1, color: "#98abc5" }, { label: 'primos', value: 1, color: "#8a89a6"}]]);
+  });
+  
+ $("#ec-chartpie-0")
+    .on('widgetInstanciated', function(event){
+      // Override default properties
+      // $(this).data('widget').init({
+      //   radiusFactor: {
+      //     slices: {
+      //       outer: 0.5,
+      //       inner: 0.3
+      //     }
+      //   }
+      // });
+    $(this).data('widget').init();
+      // Injecting initial data
+      var initialData = [{ label: 'primo', value: 1, color: "#98abc5" }, { label: 'primos', value: 1, color: "#8a89a6"}, { label: 'primof', value: 1, color: "#6b486b"}];
+      $(this).data('widget').change(initialData);
+    });
+
+  // Second instance of the widget
+
+  $('#push-10').on('click', function(){
+    $("#ec-chartpie-1").trigger('dataProviding', [[{ label: 'Dos', value: 1, color: "#FFCC00"}]]);
+  });
+
+ $('#push-11').on('click', function(){
+    $("#ec-chartpie-1").trigger('dataProviding', [[{ label: 'Dos', value: 1, color: "#FFCC00" }, { label: 'Tres', value: 3, color: "#8aFFFF"}]]);
+  });
+  
+ $("#ec-chartpie-1")
+    .on('widgetInstanciated', function(event){
+      //Override default properties
+      $(this).data('widget').init({
+        radiusFactor: {
+          slices: {
+            outer: 0.5,
+            inner: 0.3
+          }
+        }
+      });
+    // Injecting initial data
+      var initialData = [{ label: 'Second', value: 1, color: "#FFCCE5" }, { label: 'Third', value: 4, color: "#8a89a6"}, { label: 'Fourth', value: 1, color: "#6b486b"}];
+      $(this).data('widget').change(initialData);
+    });
+
+
+  // Common behaviours
+  $("[data-mnv='ecChartPie']")
+      .on('dataProviding', function(event, data){
+        $(this).data('widget').change(data);
+  });
+
+  // Run the widgets for demo
+  WLCMI.start();
+});
+
+
+</script>

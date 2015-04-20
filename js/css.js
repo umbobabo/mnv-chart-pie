@@ -1,0 +1,2 @@
+(function() { var css = ".mnv-ec-livesearch input{border:solid 1px grey;}\n" + 
+"\n", head = document.getElementsByTagName('head')[0], style = document.createElement('style'); style.setAttribute('type', 'text/css'); var nodeStyle = document.createTextNode(css); if(style.styleSheet){ style.styleSheet.cssText = nodeStyle.toString();}else{ style.appendChild(nodeStyle); }; head.appendChild(style);})();
